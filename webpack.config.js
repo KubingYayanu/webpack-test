@@ -1,6 +1,7 @@
 /* webpack.config.js ： Webpack 的設定檔 */
 
 var path = require("path");
+var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // 建立一個 extract text plugin 的實例
@@ -32,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules|bower_components)/,
         use: [
           {
             loader: "babel-loader",
@@ -45,6 +46,13 @@ module.exports = {
     ]
   },
   plugins: [
-    extractPlugin // 把extract過的loader轉存成css檔
+    extractPlugin, // 把extract過的loader轉存成css檔
+    new webpack.ProvidePlugin({
+      // 利用 webpack.ProvidePlugin 讓 $ 和 jQuery 可以連結到 jquery library
+      $: "jquery",
+      jQuery: "jquery",
+      'window.jQuery': 'jquery',
+      Popper: ["popper.js", "default"]
+    })
   ]
 };

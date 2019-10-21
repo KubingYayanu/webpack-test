@@ -1,6 +1,7 @@
 /* src/scss/style.scss - 也使用 _color.scss 的定義 */
 
 @import "colors";
+@import "~bootstrap/scss/bootstrap"; //前綴波浪符 `~` 指向 node_modules
 
 body {
   font-family: Helvetica, Arial, sans-serif;
