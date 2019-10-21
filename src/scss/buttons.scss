@@ -1,0 +1,17 @@
+/* src/scss/buttons.scss - 定義按鈕樣式，使用了_color.scss 的顏色定義 */
+
+@import "colors";
+
+button {
+  border: 1px solid $primary_color;
+  color: $primary_color;
+  padding: 8px;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: $secondary_color;
+    color: #fff;
+  }
+}

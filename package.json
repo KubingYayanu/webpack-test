@@ -5,12 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack src/js/main.js -o dist/bundle.js"
+    "build": "cross-env NODE_ENV=development webpack",
+    "watch": "cross-env NODE_ENV=development webpack -w",
+    "deploy": "cross-env NODE_ENV=production webpack -p"
   },
   "keywords": [],
   "author": "Kubing",
   "license": "MIT",
   "devDependencies": {
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   }
