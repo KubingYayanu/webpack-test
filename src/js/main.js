@@ -11,3 +11,6 @@ myDesc.hide();
 myButton.on("click", function(e) {
   myDesc.toggle();
 });
+
+const log = (str) => {console.log(str)}
+log(123);

@@ -29,6 +29,18 @@ module.exports = {
           //利用 extractPlugin 實例裡的 extract 來建立 Loader
           use: ["css-loader", "sass-loader"]
         })
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"]
+            }
+          }
+        ]
       }
     ]
   },
