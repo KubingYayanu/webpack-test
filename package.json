@@ -4,9 +4,14 @@
   "description": "webpakc-test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/js/main.js -o dist/bundle.js"
   },
   "keywords": [],
   "author": "Kubing",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
 }
